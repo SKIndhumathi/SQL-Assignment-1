@@ -1,0 +1,24 @@
+CREATE DATABASE library;
+
+USE library;
+
+CREATE TABLE books (
+    book_id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    author VARCHAR(50) NOT NULL,
+    category VARCHAR(30),
+    price DECIMAL(8,2),
+    quantity INT,
+    published_year INT
+);
+
+DESCRIBE books;
+
+ALTER TABLE books
+ADD COLUMN publisher VARCHAR(50);
+
+ALTER TABLE books
+RENAME COLUMN published_year TO year;
+
+DESCRIBE books;
+
